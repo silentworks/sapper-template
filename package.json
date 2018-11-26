@@ -9,7 +9,7 @@
     "start": "node __sapper__/build",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
-    "test": "run-p --race dev cy:run"
+    "test": "concurrently \"npm run dev\" \"npm run cy:run\""
   },
   "dependencies": {
     "compression": "^1.7.1",
@@ -17,7 +17,7 @@
     "sirv": "^0.2.0"
   },
   "devDependencies": {
-    "npm-run-all": "^4.1.2",
+    "concurrently": "^4.1.0",
     "sapper": "^0.22.1",
     "svelte": "^2.0.0",
     "svelte-loader": "^2.9.0",
